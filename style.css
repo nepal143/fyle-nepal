@@ -39,6 +39,7 @@ img {
 	align-items: center;
 	padding: auto 10%;
 	margin: auto;
+	padding-top: 100px;
 }
 .hero-image {
 	 display: flex;
@@ -530,6 +531,7 @@ margin: 20px auto;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		width: 80VW;
 	}
 	.second-best-container img{
 		width: 80vw;
@@ -539,6 +541,95 @@ margin: 20px auto;
 		display: flex;
 		justify-content: center;
 	}
+
 	
-	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+	position: fixed;
+	width: 100vw;
+	z-index: 100;
+
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 1rem;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .navbar-toggler {
+        display: inline-block;
+		position: absolute;
+		right: 1rem;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .navbar-menu a {
+        padding: 1rem;
+    }
 }

@@ -8,10 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="./Images/fyleLogo.svg" alt="Fyle Logo" class="logo">
+            <button class="navbar-toggler" onclick="toggleNavbar()">
+                &#9776;
+            </button>
+        </div>
+        <ul class="navbar-menu" id="navbarMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#what-we-do">What We Do?</a></li>
+            <li><a href="#why-choose-us">Why Choose Us?</a></li>
+            <li><a href="#experts-growths">Experts Growths</a></li>
+            <li><a href="#client-feedback">Client Feedback</a></li>
+        </ul>
+    </nav>
 
     <div class="container-fluid p-0">
-        <div class=" hero-section">
+        <div class=" hero-section" id="home">
 
             <!-- Image Section -->
         
@@ -38,7 +52,7 @@
 
 
     <div class="slider">
-        <div class="sub-heading slide-right">WHAT WE DO</div>
+        <div class="sub-heading slide-right" id="what-we-do">WHAT WE DO</div>
         <div class="services-provided slide-right">
             <div class="heading">
                 SERVICES PROVIDE FOR YOU
@@ -101,7 +115,7 @@
 
 
     <div class="best">
-        <div class="sub-heading fade">WHY CHOOSE US </div>
+        <div class="sub-heading fade" id="why-choose-us">WHY CHOOSE US </div>
         <div class="best-heading fade">WHY WE ARE BEST</div>
         <div class="cards-container">
 
@@ -171,7 +185,7 @@
     </div>
 
     <div class="our-company">
-        <div class="sub-heading fade">EXPERTS GROWTHS</div>
+        <div class="sub-heading fade" id="experts-growths">EXPERTS GROWTHS</div>
         <div class="best-heading fade">OUR COMPANY GROWTH</div>
         <div class="cards-container">
 
@@ -206,7 +220,7 @@
     </div>
 
     <div class="best">
-        <div class="sub-heading fade ">CLIENT'S FEEDBACK</div>
+        <div class="sub-heading fade " id="client-feedback">CLIENT'S FEEDBACK</div>
         <div class="best-heading fade">PEOPLE SAY'S ABOUT US !</div>
 
         <p class="quotemarks-text slide-left">

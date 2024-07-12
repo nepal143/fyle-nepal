@@ -2,71 +2,71 @@ window.onload = function() {
     document.getElementById('checkbox').checked = false;
 };
 
-const track = document.getElementById("image-track");
-const dots = [
-    document.getElementById('dot1'),
-    document.getElementById('dot2'),
-    document.getElementById('dot3'),
-    document.getElementById('dot4')
-];
+// const track = document.getElementById("image-track");
+// const dots = [
+//     document.getElementById('dot1'),
+//     document.getElementById('dot2'),
+//     document.getElementById('dot3'),
+//     document.getElementById('dot4')
+// ];
 
-window.onmousedown = e => {
-    track.dataset.mouseDownAt = e.clientX;
-};
+// window.onmousedown = e => {
+//     track.dataset.mouseDownAt = e.clientX;
+// };
 
-window.onmousemove = e => {
-    if (track.dataset.mouseDownAt === "0") return;
+// window.onmousemove = e => {
+//     if (track.dataset.mouseDownAt === "0") return;
 
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
-    const maxDelta = window.innerWidth;
-    const percentage = (mouseDelta / maxDelta) * -100;
-    let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+//     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+//     const maxDelta = window.innerWidth;
+//     const percentage = (mouseDelta / maxDelta) * -100;
+//     let nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
-    if (nextPercentage > 0) {
-        nextPercentage = 0;
-    }
-    if (nextPercentage < -100) {
-        nextPercentage = -100;
-    }
+//     if (nextPercentage > 0) {
+//         nextPercentage = 0;
+//     }
+//     if (nextPercentage < -100) {
+//         nextPercentage = -100;
+//     }
 
-    track.dataset.percentage = nextPercentage;
+//     track.dataset.percentage = nextPercentage;
 
-    track.animate({
-        transform: "translate(" + nextPercentage + "%, 0%)"
-    }, { duration: 1200, fill: "forwards" });
+//     track.animate({
+//         transform: "translate(" + nextPercentage + "%, 0%)"
+//     }, { duration: 1200, fill: "forwards" });
 
-    for (const image of track.getElementsByClassName("image")) {
-        image.animate({ objectPosition: nextPercentage + 100 + "% 50%" }, { duration: 1200, fill: "forwards" });
-    }
+//     for (const image of track.getElementsByClassName("image")) {
+//         image.animate({ objectPosition: nextPercentage + 100 + "% 50%" }, { duration: 1200, fill: "forwards" });
+//     }
 
-    updateActiveDot(nextPercentage);
-};
+//     updateActiveDot(nextPercentage);
+// };
 
-window.onmouseup = e => {
-    track.dataset.mouseDownAt = "0";
-    if (track.dataset.percentage === undefined) {
-        track.dataset.percentage = 0;
-    }
+// window.onmouseup = e => {
+//     track.dataset.mouseDownAt = "0";
+//     if (track.dataset.percentage === undefined) {
+//         track.dataset.percentage = 0;
+//     }
 
-    track.dataset.prevPercentage = track.dataset.percentage;
-};
+//     track.dataset.prevPercentage = track.dataset.percentage;
+// };
 
-function updateActiveDot(percentage) {
-    const totalDots = dots.length;
-    const index = Math.min(Math.floor((Math.abs(percentage) / 100) * totalDots), totalDots - 1);
+// function updateActiveDot(percentage) {
+//     const totalDots = dots.length;
+//     const index = Math.min(Math.floor((Math.abs(percentage) / 100) * totalDots), totalDots - 1);
 
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-}
+//     dots.forEach(dot => dot.classList.remove('active'));
+//     dots[index].classList.add('active');
+// }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const checkbox = document.getElementById('checkbox');
-    const sendDataButton = document.getElementById('sendDataButton');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const checkbox = document.getElementById('checkbox');
+//     const sendDataButton = document.getElementById('sendDataButton');
 
-    checkbox.addEventListener('change', function() {
-        sendDataButton.disabled = !checkbox.checked;
-    });
-});
+//     checkbox.addEventListener('change', function() {
+//         sendDataButton.disabled = !checkbox.checked;
+//     });
+// });
 
 document.getElementById('contactus').addEventListener('click', function() {
     var formContainer = document.getElementById('form-container');

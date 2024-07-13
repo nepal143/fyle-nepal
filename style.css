@@ -934,3 +934,43 @@ margin: 20px auto;
 .custom-innerdot {
     /* Your custom styles here */
 }
+
+.gallery-item-hover{
+	position: absolute;
+	background-color: #ff4356;
+	z-index: 4 ;
+	/* top: 0;
+	left: 0; */
+	height: 427px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	color: white	;
+	text-align: center;
+	display: none;
+}
+.gallery-item-hover img{
+	width: 70px;
+	margin: 20px auto;
+}
+.gallery-item-hover a{
+	padding: 10px 30px;
+	border: none;
+	outline: none;
+	background-color: white;
+	text-decoration: none;
+	color: black ;
+}
+.gallery-item-hover p{
+	font-size: 1.7vh;
+}
+.hover-heading{
+	font-size: 2.4vh;
+}
+.gallery-item:hover .gallery-item-hover{
+	display: flex;
+}
+

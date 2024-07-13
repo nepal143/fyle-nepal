@@ -2,6 +2,49 @@ window.onload = function() {
     document.getElementById('checkbox').checked = false;
 };
 
+
+// const track = document.querySelector('.gallery-track');
+// const items = document.querySelectorAll('.gallery-item');
+// let index = 0;
+
+// function startAutoScroll() {
+//     setInterval(() => {
+//         index = (index + 1) % items.length;
+//         track.style.transform = `translateX(${-index * 100}%)`;
+//     }, 3000); // Change slide every 3 seconds
+// }
+
+// startAutoScroll();
+
+let currentIndex = 0;
+const totalItems = document.querySelectorAll('.gallery-item').length;
+const itemsPerSlide = Math.ceil(totalItems / 3); // Change this to fit the number of items per slide
+
+function currentSlide(index) {
+    const track = document.querySelector('.gallery-track');
+    const itemWidth = document.querySelector('.gallery-item').offsetWidth;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    track.style.transform = `translateX(${-index * itemsPerSlide * itemWidth}px)`;
+    updateDots(index);
+    currentIndex = index;
+}
+
+function updateDots(index) {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+    });
+}
+
+// Optional: auto-scroll functionality
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % 3;
+    currentSlide(currentIndex);
+}, 5000);
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateDots(currentIndex);
+});
 // const track = document.getElementById("image-track");
 // const dots = [
 //     document.getElementById('dot1'),
@@ -59,14 +102,14 @@ window.onload = function() {
 //     dots[index].classList.add('active');
 // }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const checkbox = document.getElementById('checkbox');
-//     const sendDataButton = document.getElementById('sendDataButton');
+document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('checkbox');
+    const sendDataButton = document.getElementById('sendDataButton');
 
-//     checkbox.addEventListener('change', function() {
-//         sendDataButton.disabled = !checkbox.checked;
-//     });
-// });
+    checkbox.addEventListener('change', function() {
+        sendDataButton.disabled = !checkbox.checked;
+    });
+});
 
 document.getElementById('contactus').addEventListener('click', function() {
     var formContainer = document.getElementById('form-container');
@@ -81,65 +124,65 @@ function showDiv(divId) {
     document.getElementById(divId).style.visibility = 'visible';
 }
 
-function hideDiv(divId) {
-    document.getElementById(divId).style.visibility = 'hidden';
-}
+// function hideDiv(divId) {
+//     document.getElementById(divId).style.visibility = 'hidden';
+// }
 
-document.getElementById('img1').addEventListener('mouseover', function() {
-    showDiv('1');
-});
-document.getElementById('img1').addEventListener('mouseout', function() {
-    hideDiv('1');
-});
+// document.getElementById('img1').addEventListener('mouseover', function() {
+//     showDiv('1');
+// });
+// document.getElementById('img1').addEventListener('mouseout', function() {
+//     hideDiv('1');
+// });
 
-document.getElementById('img2').addEventListener('mouseover', function() {
-    showDiv('2');
-});
-document.getElementById('img2').addEventListener('mouseout', function() {
-    hideDiv('2');
-});
+// document.getElementById('img2').addEventListener('mouseover', function() {
+//     showDiv('2');
+// });
+// document.getElementById('img2').addEventListener('mouseout', function() {
+//     hideDiv('2');
+// });
 
-document.getElementById('img3').addEventListener('mouseover', function() {
-    showDiv('3');
-});
-document.getElementById('img3').addEventListener('mouseout', function() {
-    hideDiv('3');
-});
+// document.getElementById('img3').addEventListener('mouseover', function() {
+//     showDiv('3');
+// });
+// document.getElementById('img3').addEventListener('mouseout', function() {
+//     hideDiv('3');
+// });
 
-document.getElementById('img4').addEventListener('mouseover', function() {
-    showDiv('4');
-});
-document.getElementById('img4').addEventListener('mouseout', function() {
-    hideDiv('4');
-});
+// document.getElementById('img4').addEventListener('mouseover', function() {
+//     showDiv('4');
+// });
+// document.getElementById('img4').addEventListener('mouseout', function() {
+//     hideDiv('4');
+// });
 
-document.getElementById('1').addEventListener('mouseover', function() {
-    showDiv('1');
-});
-document.getElementById('1').addEventListener('mouseout', function() {
-    hideDiv('1');
-});
+// document.getElementById('1').addEventListener('mouseover', function() {
+//     showDiv('1');
+// });
+// document.getElementById('1').addEventListener('mouseout', function() {
+//     hideDiv('1');
+// });
 
-document.getElementById('2').addEventListener('mouseover', function() {
-    showDiv('2');
-});
-document.getElementById('2').addEventListener('mouseout', function() {
-    hideDiv('2');
-});
+// document.getElementById('2').addEventListener('mouseover', function() {
+//     showDiv('2');
+// });
+// document.getElementById('2').addEventListener('mouseout', function() {
+//     hideDiv('2');
+// });
 
-document.getElementById('3').addEventListener('mouseover', function() {
-    showDiv('3');
-});
-document.getElementById('3').addEventListener('mouseout', function() {
-    hideDiv('3');
-});
+// document.getElementById('3').addEventListener('mouseover', function() {
+//     showDiv('3');
+// });
+// document.getElementById('3').addEventListener('mouseout', function() {
+//     hideDiv('3');
+// });
 
-document.getElementById('4').addEventListener('mouseover', function() {
-    showDiv('4');
-});
-document.getElementById('4').addEventListener('mouseout', function() {
-    hideDiv('4');
-});
+// document.getElementById('4').addEventListener('mouseover', function() {
+//     showDiv('4');
+// });
+// document.getElementById('4').addEventListener('mouseout', function() {
+//     hideDiv('4');
+// });
 
 function changeImageSrc(newSrc) {
     var imageId = "image-to-change";
